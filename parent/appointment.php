@@ -239,16 +239,16 @@
 
                                     for ( $x=0; $x<($result->num_rows);$x++){
                                         echo "<tr>";
-                                        for($q=0;$q<3;$q++){
+                                        for($q=0;$q<1;$q++){
                                             $row=$result->fetch_assoc();
-                                            $scheduleid=$row["scheduleid"];
-                                            $title=$row["title"];
-                                            $docname=$row["docname"];
-                                            $scheduledate=$row["scheduledate"];
-                                            $scheduletime=$row["scheduletime"];
-                                            $apponum=$row["apponum"];
-                                            $appodate=$row["appodate"];
-                                            $appoid=$row["appoid"];
+                                            if($row){ $scheduleid=$row["scheduleid"];}
+                                            if($row){ $title=$row["title"];}
+                                            if($row){ $docname=$row["docname"];}
+                                            if($row){ $scheduledate=$row["scheduledate"];}
+                                            if($row){ $scheduletime=$row["scheduletime"];}
+                                            if($row){ $apponum=$row["apponum"];}
+                                            if($row){ $appodate=$row["appodate"];}
+                                            if($row){ $appoid=$row["appoid"];}
     
                                             if($scheduleid==""){
                                                 break;
@@ -277,6 +277,9 @@
                                                                 <div class="h4-search">
                                                                     Scheduled Date: '.$scheduledate.'<br>Starts: <b>@'.substr($scheduletime,0,5).'</b> (24h)
                                                                 </div>
+                                                                <div class="h4-search">
+                                                                Cash to Pay to Cashier: KSH 300 
+                                                            </div>
                                                                 <br>
                                                                 <a href="?action=drop&id='.$appoid.'&title='.$title.'&doc='.$docname.'" ><button  class="login-btn btn-primary-soft btn "  style="padding-top:11px;padding-bottom:11px;width:100%"><font class="tn-in-text">Cancel Booking</font></button></a>
                                                         </div>

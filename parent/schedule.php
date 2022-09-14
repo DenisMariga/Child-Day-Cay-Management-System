@@ -245,13 +245,13 @@
                                     //echo $result->num_rows;
                                 for ( $x=0; $x<($result->num_rows);$x++){
                                     echo "<tr>";
-                                    for($q=0;$q<3;$q++){
+                                    for($q=0;$q<1;$q++){
                                         $row=$result->fetch_assoc();
-                                        $scheduleid=$row["scheduleid"];
-                                        $title=$row["title"];
-                                        $docname=$row["docname"];
-                                        $scheduledate=$row["scheduledate"];
-                                        $scheduletime=$row["scheduletime"];
+                                         if($row){ $scheduleid=$row["scheduleid"];}
+                                         if($row){$title=$row["title"];}
+                                         if($row){$docname=$row["docname"];}
+                                         if($row){$scheduledate=$row["scheduledate"];}
+                                         if($row){$scheduletime=$row["scheduletime"];}
 
                                         if($scheduleid==""){
                                             break;
